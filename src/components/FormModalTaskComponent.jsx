@@ -6,7 +6,6 @@ import {useRef, useState} from "react";
 const FormModalTaskComponent = (props) => {
 
     const {handleClose, addTask, updateTask} = props
-    console.log(updateTask);
     const initialTask = updateTask.id === undefined ? {title: '', description: '', status: false} : updateTask
     const [task, setTask] = useState(initialTask)
     const titleInput = useRef(null)
