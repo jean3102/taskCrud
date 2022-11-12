@@ -4,7 +4,7 @@ const NavComponent = ({handleShow}) => {
     return (
         <Navbar bg="primary" variant="dark">
             <Container fluid>
-                <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
+                <Navbar.Brand href="#home">Task Crud</Navbar.Brand>
                 <Navbar.Toggle/>
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
