@@ -35,14 +35,6 @@ const HomeComponent = () => {
                 ...taskToDo, {id: taskToDo.length + 1, ...task}
             ])
             useAlertSuccess('Your task has been created')
-
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Your task has been created',
-                showConfirmButton: false,
-                timer: 1500
-            })
         }
     }
 
