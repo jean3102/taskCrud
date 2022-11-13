@@ -1,4 +1,4 @@
-import './App.css'
+import './css/App.css'
 import HomeComponent from "./components/HomeComponent.jsx";
 import TaskContext from "./context/TaskContext.jsx";
 function App() {
