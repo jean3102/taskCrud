@@ -1,9 +1,11 @@
 import {Button, Modal} from "react-bootstrap";
-import {useRef, useState} from "react";
+import {useContext, useRef, useState} from "react";
 import FormModalTaskComponent from "./FormModalTaskComponent.jsx";
+import {Task} from "../context/TaskContext.jsx";
 
-const ModalTaskComponent = (props) => {
-    const {titleModal,show, handleClose, addTask,updateTask} = props
+const ModalTaskComponent = () => {
+    const {show,handleClose,titleModal} = useContext(Task)
+
     return (
         <>
             <Modal show={show}
@@ -11,11 +13,7 @@ const ModalTaskComponent = (props) => {
                 <Modal.Header closeButton>
                     <Modal.Title>{titleModal}</Modal.Title>
                 </Modal.Header>
-                <FormModalTaskComponent
-                    handleClose={handleClose}
-                    addTask={addTask}
-                    updateTask={updateTask}
-                />
+                <FormModalTaskComponent/>
             </Modal>
         </>
     )

@@ -1,7 +1,9 @@
 import {Button, ButtonGroup, Card, Col, Row} from "react-bootstrap";
+import {useContext} from "react";
+import {Task} from "../context/TaskContext.jsx";
 
-const CompleteTaskComponent = (props) => {
-    const {taskToDo,deleteTask} = props;
+const CompleteTaskComponent = () => {
+    const {taskToDo,deleteTaskContext} = useContext(Task)
     return (
         <Row xs={2} md={2} className="g-4">
             {taskToDo?.filter(item => item.status === true).map((item, key) =>
@@ -13,7 +15,7 @@ const CompleteTaskComponent = (props) => {
                                 {item.description}
                             </Card.Text>
                             <ButtonGroup aria-label="Basic example">
-                                <Button variant="outline-danger" onClick={()=>deleteTask(item.id)}>Delete</Button>
+                                <Button variant="outline-danger" onClick={()=>deleteTaskContext(item.id)}>Delete</Button>
                             </ButtonGroup>
                         </Card.Body>
                     </Card>

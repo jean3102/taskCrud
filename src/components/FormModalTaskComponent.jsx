@@ -1,11 +1,13 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {Modal} from "react-bootstrap";
-import {useRef, useState} from "react";
+import {useContext, useRef, useState} from "react";
+import {Task} from "../context/TaskContext.jsx";
 
-const FormModalTaskComponent = (props) => {
+const FormModalTaskComponent = () => {
 
-    const {handleClose, addTask, updateTask} = props
+    const {updateTask,handleClose,addTaskContext} = useContext(Task)
+
     const initialTask = updateTask.id === undefined ? {title: '', description: '', status: false} : updateTask
     const [task, setTask] = useState(initialTask)
     const titleInput = useRef(null)
@@ -43,10 +45,10 @@ const FormModalTaskComponent = (props) => {
         if (!inputValidation()) return
         //TODO validate if exist id for updated task
         if (updateTask.id !== undefined) {
-            addTask(updateTask)
-            addTask({...updateTask, ...task})
+            addTaskContext(updateTask)
+            addTaskContext({...updateTask, ...task})
         } else {
-            addTask(task)
+            addTaskContext(task)
         }
         setTask(initialTask)
     }

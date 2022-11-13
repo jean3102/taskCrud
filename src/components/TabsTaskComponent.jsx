@@ -1,9 +1,8 @@
-import {Tab, Tabs} from "react-bootstrap";
+import {Container, Tab, Tabs} from "react-bootstrap";
 import CurrentTaskComponent from "./CurrentTaskComponent.jsx";
 import CompleteTaskComponent from "./CompleteTaskComponent.jsx";
 
-const TabsTaskComponent = (props) => {
-    const {taskToDo,taskCompleted,editTask,deleteTask} = props;
+const TabsTaskComponent = () => {
     return (
         <Tabs
             defaultActiveKey="Pending"
@@ -11,14 +10,13 @@ const TabsTaskComponent = (props) => {
             className="mb-3"
         >
             <Tab eventKey="Pending" title="Task Pending">
-                <CurrentTaskComponent taskToDo={taskToDo}
-                                      taskCompleted={taskCompleted}
-                                      editTask={editTask}
-                                      deleteTask={deleteTask}/>
+                <Container fluid id="body">
+                <CurrentTaskComponent/>
+                </Container>
+
             </Tab>
             <Tab eventKey="Complete" title="Task Completed">
-                <CompleteTaskComponent taskToDo={taskToDo}
-                                       deleteTask={deleteTask}/>
+                <CompleteTaskComponent/>
             </Tab>
         </Tabs>
     );

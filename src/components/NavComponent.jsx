@@ -1,6 +1,9 @@
 import {Button, Container, Navbar} from "react-bootstrap";
+import {useContext} from "react";
+import {Task} from "../context/TaskContext.jsx";
 
-const NavComponent = ({handleShow}) => {
+const NavComponent = () => {
+    const {handleShow} = useContext(Task)
     return (
         <Navbar bg="primary" variant="dark">
             <Container fluid>
