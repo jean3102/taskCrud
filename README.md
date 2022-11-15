@@ -1,1 +1,1 @@
-# taskCrud basic crud done in react, just run command "npm install" then "npm run dev"
+# taskCrud basic crud made in react, just run command "npm install" then "npm run dev"
