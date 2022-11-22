@@ -39,5 +39,4 @@ const HomeComponent = () => {
 
 const styleCol = {with:'100%', overflowY: 'auto', color:'red'}
 
-
 export default HomeComponent
